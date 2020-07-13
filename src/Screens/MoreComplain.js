@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View,TextInput,TouchableOpacity } from 'react-native';
+import { Text, View,TextInput,TouchableOpacity,ToastAndroid } from 'react-native';
 import firebase from 'firebase'
 
 export default class MoreComplain extends React.Component {
@@ -12,10 +12,31 @@ export default class MoreComplain extends React.Component {
             }
         }
     }
+
+    called = ()=>{
+        const date = new Date().getDate()
+        let month = new Date().getMonth() + 1;
+        let year = new Date().getFullYear();
+
+        const {}=this.state
+        if(this.state.complain==''||this.state.dep=='')
+        {
+            ToastAndroid.showWithGravity('Please Fill Every Detail',ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,25,50)
+        }
+        else{
+            firebase.database().ref(`complains`).push({
+                complain:this.state.complain,dep:this.state.dep,date,month,year
+            })
+            ToastAndroid.showWithGravity('Complain Submitted',ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,25,50)
+            this.props.navigation.goBack()
+        }
+    }
     render()
 {    
     return (
-      <View style={{marginTop:10}}>
+      <View style={{marginTop:10,paddingHorizontal:15}}>
           <View style={{flexDirection:'row'}}>
           <Text style={{marginTop:14,fontSize:18}}>Complain</Text>
          <TextInput
@@ -36,13 +57,13 @@ export default class MoreComplain extends React.Component {
               onChangeText={dep=>this.setState({dep})}
               />
      </View>
-     
-<TouchableOpacity style={styles.button}>
+     <View style={{marginTop:150}}>
+<TouchableOpacity style={styles.button} onPress={this.called}>
  <Text style={{fontSize:25,fontWeight:'bold',fontStyle:'italic',color:'white'}}>
-     Submit Review
+     Submit Complain
  </Text>
 </TouchableOpacity>
-         
+</View>
       </View>
     );
 }
@@ -63,9 +84,10 @@ const styles={
       },
       button:{
         marginHorizontal:30,
-        backgroundColor:"#FF0000",
+        backgroundColor:"#3e8e8a",
         borderRadius:4,
         height:52,
+   
         alignItems:'center',
         justifyContent:'center',
         alignSelf:'stretch',

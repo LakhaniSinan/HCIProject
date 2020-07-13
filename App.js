@@ -97,8 +97,21 @@ const  HomeStack = ()=>
     backgroundColor:'#3e8e8a'
   }
   }}
-
+  
   />
+     {/* <Stack.Screen 
+  name="MoreNewsFeed" 
+  component={MoreNewsFeed}
+  options={{
+ 
+    headerTitleAlign:'center',
+    headerTitle:"AddNewsFeed",
+      headerStyle:{
+    backgroundColor:'#3e8e8a'
+  }
+  }}
+
+  /> */}
    <Stack.Screen 
   name="AddNewsFeed" 
   component={AddNewsFeed}

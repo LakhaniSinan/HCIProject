@@ -106,7 +106,7 @@ const styles={
     },
     continer:{
         flex:1,
-        backgroundColor:'pink'
+      
  },
     button:{
         marginHorizontal:30,

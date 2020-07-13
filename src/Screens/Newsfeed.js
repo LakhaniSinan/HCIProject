@@ -3,11 +3,30 @@ import { Text, View,Button,TouchableOpacity,ScrollView,StyleSheet } from 'react-
 import firebase from 'firebase'
 import MediaControls, { PLAYER_STATES } from 'react-native-media-controls';
 import Video from 'react-native-video';
-
+import MoreNewsFeed from './MoreNewsFeed'
 class Newsfeed extends React.Component{
 
+
+  constructor() {
+    super();
+    this.state = {
+      History: {},
+      presentHistory: '',
+    };
+  }
+componentDidMount(){
+    firebase.database().ref(`1/`).on('value',snapshot=>{
+        let data = snapshot.val() ? snapshot.val() : {};
+        let HistoryItems = {...data};
+        this.setState({
+            History: HistoryItems,
+          }); 
+})
+}
+
     render(){
-    
+      let keys=Object.keys(this.state.History)
+      console.log(keys,'keyss');
     return (
       <ScrollView>
         <TouchableOpacity 
@@ -16,7 +35,19 @@ class Newsfeed extends React.Component{
         >
          <Text style={{fontSize:15,marginLeft:5}}>What is On Your Mind?</Text>
          </TouchableOpacity>
-
+         {keys.length > 0 ? (
+              keys.map(key =>(
+                 <MoreNewsFeed
+                 key={key}
+                 HistoryItem={this.state.History[key]}
+                 />
+              ))
+              
+            ) : (
+                <View style={{flex:1,alignItems:'center',marginTop:250}}> 
+                  <Text style={{fontSize:20,fontWeight:'bold'}}>No Post.Post Something</Text>
+                  </View>
+            )}
 
          
       </ScrollView>

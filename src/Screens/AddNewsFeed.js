@@ -16,13 +16,14 @@ export default class AddNewsFeed extends React.Component{
     constructor(props){
         super()
             this.state={
-                avatarSource:null,VidPath:null,mindtext:''
+                avatarSource:null,VidPath:null,mindtext:'',like:false,count:0
             
         }
     }
     OnPost = ()=>{
 
-      const{mindtext,avatarSource,VidPath}=this.state
+      const{mindtext,avatarSource,VidPath,like,count}=this.state
+    
       console.log(this.state,'state');
 
       if(this.state.avatarSource==null && this.state.mindtext=='')
@@ -32,7 +33,7 @@ export default class AddNewsFeed extends React.Component{
       
      else{
     firebase.database().ref('1').push({
-       mindtext,avatarSource
+       mindtext,avatarSource,like,count
     })
     ToastAndroid.showWithGravity('Successfully Posted', ToastAndroid.LONG,
     ToastAndroid.BOTTOM, 25, 50),
