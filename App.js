@@ -175,7 +175,7 @@ const  NotificationStack = ()=>
   headerStyle:{
     backgroundColor:'#3e8e8a'
   },
-   headerTintColor:'white'
+     headerTintColor:'white'
 }}
   />
 </Stack.Navigator>

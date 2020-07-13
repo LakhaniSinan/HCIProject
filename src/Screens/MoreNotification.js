@@ -18,9 +18,9 @@ class MoreNotificaton extends React.Component{
       
 
         return (
-    <ScrollView style={{borderRadius:20,borderWidth:1,height:100,marginTop:10,marginHorizontal:10}}>
+    <ScrollView style={{borderRadius:10,borderWidth:1,height:100,marginTop:10,marginHorizontal:10}}>
         <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-        <Text style={{marginLeft:15}}>Title:         {Title}</Text>
+        <Text style={{marginLeft:15}}>Title: {Title}</Text>
         <Text style={{marginRight:15}}>{Day}</Text>
         </View>
 
