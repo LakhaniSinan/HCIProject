@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View,ActivityIndicator } from 'react-native';
 import firebase from 'firebase'
 
-export default class Complain extends React.Component {
+export default class Loading extends React.Component {
     // componentDidMount(){
     //     firebase.auth().onAuthStateChanged(user=>{
     //         this.props.navigation.navigate(user ? <App)

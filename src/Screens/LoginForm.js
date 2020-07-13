@@ -76,7 +76,7 @@ export default class LoginForm extends Component{
                     <Text style={{color:'#E9446A',fontSize:13,fontWeight:"600",textAlign:'center'}}>{this.state.errormessage}</Text>
                     </View>
                     {this.renderSomething()}
-                    <View style={{flex:1,flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+                    <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',marginTop:15}}>
                <Text>Don't Have An Account ?</Text>
              <TouchableOpacity onPress={()=>this.props.navigation.navigate('SignIn')}>
                  <Text style={{fontWeight:'bold',marginLeft:5,fontSize:15}}>Sign Up</Text>

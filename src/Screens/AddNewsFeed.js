@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View,Button,TouchableOpacity,ScrollView,TextInput,Image,ToastAndroid } from 'react-native';
 import firebase from 'firebase'
 import ImagePicker from 'react-native-image-picker';
-
+import VideoPlayer from 'react-native-video-controls'
 const options = {
   title: 'Select Avatar',
   customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
@@ -21,14 +21,24 @@ export default class AddNewsFeed extends React.Component{
         }
     }
     OnPost = ()=>{
+
+      const{mindtext,avatarSource,VidPath}=this.state
+      console.log(this.state,'state');
+
       if(this.state.avatarSource==null && this.state.mindtext=='')
       {
       alert('Please Enter Something')
       }
-      else {
-      alert('DOne Posting')
+      
+     else{
+    firebase.database().ref('1').push({
+       mindtext,avatarSource
+    })
+    ToastAndroid.showWithGravity('Successfully Posted', ToastAndroid.LONG,
+    ToastAndroid.BOTTOM, 25, 50),
+    this.props.navigation.goBack()
+     }
     }
-  }
     OpenCamera = () => {
       console.log('opencame');
       

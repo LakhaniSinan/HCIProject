@@ -11,7 +11,7 @@ class Complain extends Component {
   }
 
   onClick() {
-alert('navigate')
+this.props.navigation.navigate('MoreComplain')
   }
   // header = () => {
   //   return (

@@ -10,6 +10,8 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import LoginForm from './src/Screens/LoginForm'
 import Loading from './src/Screens/Loading'
 import SignOut from './src/Screens/SignOut'
+
+import MoreComplain from './src/Screens/MoreComplain'
 import AddNewsFeed from './src/Screens/AddNewsFeed'
 import SignIn from './src/Screens/SignIn'
 import Fire from './src/Components/Fire'
@@ -118,8 +120,19 @@ const  ComplainStack = ()=>
   
   return <Stack.Navigator>
   <Stack.Screen 
-  name="Home" 
+  name="Complain" 
   component={Complain}
+  options={{  headerTitleAlign:'center',
+  headerTitle:"Complain",
+  headerStyle:{
+    backgroundColor:'#3e8e8a'
+  }
+}}
+
+  />
+    <Stack.Screen 
+  name="MoreComplain" 
+  component={MoreComplain}
   options={{  headerTitleAlign:'center',
   headerTitle:"Complain",
   headerStyle:{
