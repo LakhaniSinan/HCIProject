@@ -23,7 +23,7 @@ componentDidMount(){
 {    
   let keys=Object.keys(this.state.History)
     return (
-      <View style={{backgroundColor:'white'}}>
+      <View style={{backgroundColor:'white',flex:1}}>
        {keys.length > 0 ? (
               keys.map(key =>(
                  <MoreNotificaton
