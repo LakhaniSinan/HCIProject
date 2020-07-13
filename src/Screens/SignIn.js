@@ -113,7 +113,8 @@ const styles={
         alignItems:'center',
         justifyContent:'center',
         alignSelf:'stretch',
-        marginTop:10
+        marginTop:10,
+        borderRadius:10
     }
 }
 export default SignIn

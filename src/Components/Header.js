@@ -14,8 +14,8 @@ class Header extends Component {
     
     return (
       <LinearGradient 
-        colors={['#a82389', '#0896d4']}
-        start={{ x: 0, y: 2 }} end={{ x: 1.0, y: 1.0 }}
+        colors={['#00ff7f', '#4169e1']}
+        start={{ x: 0, y: 3 }} end={{ x: 1.0, y: 1.0 }}
         style={styles.mainborder2}
       >
       <View style={{width:'100%',}}>
@@ -51,8 +51,7 @@ const styles={
       paddingVertical: 50,
       width: '100%',
       height: 20 ,
-      borderBottomRightRadius: 20,
-      borderBottomLeftRadius: 20,
+     
       justifyContent: 'center',
       alignItems: 'center',
       borderColor: '#EFEFEF',

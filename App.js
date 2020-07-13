@@ -17,6 +17,7 @@ import SignIn from './src/Screens/SignIn'
 import Fire from './src/Components/Fire'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { color } from 'react-native-reanimated';
 
 const Stack= createStackNavigator()
 const MaterialBottom = createMaterialBottomTabNavigator()
@@ -94,8 +95,10 @@ const  HomeStack = ()=>
     headerTitleAlign:'center',
     headerTitle:"News",
       headerStyle:{
-    backgroundColor:'#3e8e8a'
-  }
+    backgroundColor:'#3e8e8a',
+    color:'white'
+  },
+  headerTintColor:'white'
   }}
   
   />
@@ -115,13 +118,16 @@ const  HomeStack = ()=>
    <Stack.Screen 
   name="AddNewsFeed" 
   component={AddNewsFeed}
-  options={{
- 
+  options={{ 
+   
     headerTitleAlign:'center',
     headerTitle:"AddNewsFeed",
       headerStyle:{
-    backgroundColor:'#3e8e8a'
-  }
+    backgroundColor:'#3e8e8a',
+    color:'white'
+    
+  },
+  headerTintColor:'white'
   }}
 
   />
@@ -139,7 +145,7 @@ const  ComplainStack = ()=>
   headerTitle:"Complain",
   headerStyle:{
     backgroundColor:'#3e8e8a'
-  }
+  },  headerTintColor:'white'
 }}
 
   />
@@ -150,7 +156,7 @@ const  ComplainStack = ()=>
   headerTitle:"Complain",
   headerStyle:{
     backgroundColor:'#3e8e8a'
-  }
+  },  headerTintColor:'white'
 }}
 
   />
@@ -168,7 +174,9 @@ const  NotificationStack = ()=>
   headerTitle:"Notification",
   headerStyle:{
     backgroundColor:'#3e8e8a'
-  }}}
+  },
+   headerTintColor:'white'
+}}
   />
 </Stack.Navigator>
 }
@@ -183,7 +191,8 @@ const  ChatStack = ()=>
   headerTitle:"Chat",
   headerStyle:{
     backgroundColor:'#3e8e8a'
-  }}}
+  },  headerTintColor:'white'
+}}
   />
 </Stack.Navigator>
 }
